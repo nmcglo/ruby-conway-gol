@@ -1,3 +1,4 @@
+require 'tk'
 require_relative 'life_matrix'
 
 

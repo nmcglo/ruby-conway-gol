@@ -1,5 +1,3 @@
-require 'tk'
-
 class LifeMatrix
   attr_accessor :cells, :width, :height, :time_alive
 
@@ -14,21 +12,14 @@ class LifeMatrix
         cell_y = cell.get_y
         neighbors = []
 
-        # left neighbor
-        if cell_x > 0
-          neighbors.push(@cells[cell_y][cell_x-1])
-        end
-        # upper neighbor
-        if cell_y > 0
-          neighbors.push(@cells[cell_y-1][cell_x])
-        end
-        # right neighbor
-        if cell_x < @width -1
-          neighbors.push(@cells[cell_y][cell_x+1])
-        end
-        # lower neighbor
-        if cell_y < @height -1
-          neighbors.push(@cells[cell_y+1][cell_x])
+        (-1..1).each do |dy|
+          (-1..1).each do |dx|
+            next if dx == 0 && dy == 0
+            nx = cell_x + dx
+            ny = cell_y + dy
+            next if nx < 0 || ny < 0 || nx > @width - 1 || ny > @height - 1
+            neighbors.push(@cells[ny][nx])
+          end
         end
         cell.set_neighbors(neighbors)
         # puts "Cell: #{cell.get_x}, #{cell.get_y}"
