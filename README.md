@@ -1,5 +1,15 @@
 # ruby-conway-gol
 
+> **Note:** This was a quick POC project that I wrote when I wanted
+> to understand the Ruby langauge a little bit. 'Hello, World!' programs
+> are just enough to test that the language interpreter/compiler is
+> installed correctly. I always felt that Conway's game of life was
+> a good extra step to understand the very basics of a langauge:
+> class, function, and variable syntax; multi-dimensional arrays;
+> optional graphics or text representation of the board state; with
+> very simple, well-defined logic that's easy to implement. So that's
+> what this is!
+
 Conway's Game of Life in Ruby, rendered in a Tk window.
 
 ## Requirements
